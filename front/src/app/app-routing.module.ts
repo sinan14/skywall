@@ -9,7 +9,12 @@ const routes: Routes = [
   { path: 'signup', component: DataTableComponent, pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'movies', component: DataTableComponent },
+  {
+    path: 'movies',
+
+    canActivate: [AuthGuard],
+    component: DataTableComponent,
+  },
 ];
 
 @NgModule({
