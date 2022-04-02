@@ -1,0 +1,32 @@
+<app-header></app-header>
+<h2>Login Form</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="loginUser()">
+  <div class="imgcontainer">
+    <img src="assets/img_avatar2.png" alt="Avatar" class="avatar" />
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Email</b></label>
+    <input formControlName="email" type="text" placeholder="Enter email" />
+    <small *ngIf="isValidUser('email')" class="form-text">Required</small>
+    <label for="psw"><b>Password</b></label>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Enter Password"
+    />
+    <small *ngIf="isValidUser('password')" class="form-text">Required</small>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember" /> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color: #f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+<app-footer></app-footer>

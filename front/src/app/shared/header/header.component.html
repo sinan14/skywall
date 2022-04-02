@@ -1,0 +1,91 @@
+ref= />
+<div class="fixed-top">
+  <header class="topbar">
+    <div class="container">
+      <div class="row">
+        <!-- social icon-->
+        <div class="col-sm-12">
+          <ul class="social-network">
+            <li>
+              <a class="waves-effect waves-dark"
+                ><i class="fa fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a class="waves-effect waves-dark"
+                ><i class="fa fa-twitter"></i
+              ></a>
+            </li>
+            <li>
+              <a class="waves-effect waves-dark"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a class="waves-effect waves-dark"
+                ><i class="fa fa-pinterest"></i
+              ></a>
+            </li>
+            <li>
+              <a class="waves-effect waves-dark"
+                ><i class="fa fa-google-plus"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+    <div class="container">
+      <a
+        class="navbar-brand"
+        rel="nofollow"
+        target="_blank"
+        href="http://scadonsak.com/7bF"
+        style="text-transform: uppercase"
+        >MI MEDIA LABS</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto nav1">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin">Home </a>
+          </li>
+
+          <li class="nav-item">
+            <a *ngIf="!_auth.loggedIn()" class="nav-link" routerLink="/login"
+              >Log In</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a *ngIf="!_auth.loggedIn()" class="nav-link" routerLink="/signup"
+              >Sign Up</a
+            >
+            <a
+              *ngIf="_auth.loggedIn()"
+              class="nav-link"
+              (click)="_auth.logout()"
+              >Log out</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Apply</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

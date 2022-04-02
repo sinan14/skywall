@@ -1,0 +1,72 @@
+<app-header></app-header>
+<div style="margin-top: 10%" class="container">
+  <div class="row header" style="text-align: center; color: green">
+    <h3>Movie list</h3>
+  </div>
+  <table
+    id="example"
+    class="table table-striped table-bordered"
+    style="width: 100%"
+  >
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Cast</th>
+        <th>Release</th>
+        <th>Rating</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <th>
+          <input
+            (input)="searchByTitle($event)"
+            type="text"
+            placeholder="search title"
+          />
+        </th>
+        <th></th>
+        <th></th>
+        <th>
+          <input
+            (change)="searchByDate($event)"
+            type="date"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+            placeholder="filter by year onwards"
+          />
+        </th>
+        <th>
+          <input
+            (input)="searchByRating($event)"
+            type="number"
+            min="1"
+            max="5"
+            placeholder="search by ratings"
+          />
+        </th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let movie of movies">
+        <tr>
+          <td>
+            <p>
+              {{ movie.title }}
+            </p>
+            <p>
+              <img width="150" height="150" [src]="movie.thumb" alt="" />
+            </p>
+          </td>
+          <td>{{ movie.genre }}</td>
+          <td>{{ movie.cast }}</td>
+          <td>{{ movie.year | date: "dd/MM/yyyy" }}</td>
+          <td>{{ movie.ratings }}/5</td>
+          <td>{{ movie.description }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
