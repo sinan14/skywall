@@ -6,10 +6,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: '', component: DataTableComponent, pathMatch: 'full' },
+  { path: 'signup', component: DataTableComponent, pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'table', component: DataTableComponent },
+  { path: 'movies', component: DataTableComponent },
 ];
 
 @NgModule({
